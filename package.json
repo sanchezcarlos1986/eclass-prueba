@@ -1,0 +1,28 @@
+{
+  "name": "Eclass-Prueba-Front-End",
+  "version": "1.0.0",
+  "description": "Ejercicio Front End para Eclass",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sanchezcarlos1986/eclass-prueba.git"
+  },
+  "author": "Carlos Sánchez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sanchezcarlos1986/eclass-prueba/issues"
+  },
+  "homepage": "https://github.com/sanchezcarlos1986/eclass-prueba",
+  "devDependencies": {
+    "browser-sync": "^2.12.8",
+    "gulp": "^3.9.1",
+    "gulp-jade": "^1.1.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-stylus": "^2.3.1",
+    "gulp-watch": "^4.3.5",
+    "nib": "^1.1.0"
+  }
+}
