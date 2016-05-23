@@ -11,25 +11,45 @@ gulp.task('browser-sync', function(){
 	browserSync.init(["./public/css/*.css" , "./public/js/*.js" , "./**/*.html"],{
 		open: true,
 		server: {
-			baseDir: "./public"
+			baseDir: "./"
 		}
 	});
 });
 
-gulp.task('templates', function() { 
+gulp.task('templates',['partials'], function() {
 
-  gulp.src('./dev/jade/index.jade')
+  gulp.src('./dev/jade/index.jade')											
     .pipe(plumber({ 
 		handleError: function (err) {
 			console.log(err);
 			this.emit('end');
 		}
-	}))
+	}))	
 	.pipe(jade({
-		pretty : false 
-	}))
-	.pipe(gulp.dest('./public/')); 
+		pretty : true 
+	}))	
+
+	.pipe(gulp.dest('.')); 
+
 });
+
+gulp.task('partials', function() {
+
+	gulp.src('./dev/jade/partials/*.jade')											
+    .pipe(plumber({ 
+		handleError: function (err) {
+			console.log(err);
+			this.emit('end');
+		}
+	}))	
+	.pipe(jade({
+		pretty : true 
+	}))	
+
+	.pipe(gulp.dest('./public/partials')); 
+});
+
+
 
 gulp.task('estilos', function(){
 	gulp.src('./dev/stylus/estilos.styl')
@@ -45,6 +65,8 @@ gulp.task('estilos', function(){
 	    }))
 		.pipe(gulp.dest('./public/css')); 
 });
+
+
 
 // Watching for changes
 gulp.task('watch',['estilos', 'templates', 'browser-sync'], function(){

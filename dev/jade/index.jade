@@ -1,20 +1,71 @@
 doctype html
-html(lang='es')
+html(lang='es' ng-app="eclass")
+
+	- var title = "Spotify"
 
 	head
 		meta(charset='utf-8')
 		meta(name="viewport" ,content="width=device-width , initial-scale=1 ,maximum-scale=1")
-		link(href="favicon.ico" rel="icon" type="image/x-icon")
-		title eClass
+		link(href="./public/favicon.png" rel="shortcut icon" type="image/png")
+		link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css")
+		link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css")
+		link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css")
+		link(rel="stylesheet", href="./public/css/estilos.css")
+		title #{title}
 
-		//- Latest Bootstrap compiled and minified CSS
-		link(rel="stylesheet" href="./css/estilos.css")
+	body(ng-controller="EclassController")
 
-	body
+		header
+			h1 
+				span(class="fa fa-spotify" aria-hidden="true")
+				| #{title}
 
-		h1 eClass
+		.container
+			.row
+				.col-xs-8
 
-		script#__bs_script__(type='text/javascript').
-			//<![CDATA[
-			document.write("<script async src='http://HOST:3001/browser-sync/browser-sync-client.2.11.1.js'><\/script>".replace("HOST", location.hostname));
-			//]]>
+					div#spotify
+						h3.title Resultados para {{artista_name}}			
+						
+						article(ng-repeat="cancion in canciones | filter: buscador")
+							a(href="#" rel="popover" title="Detalles")
+								span(class="fa fa-music" aria-hidden="true")
+								| {{cancion.track_number}} - {{cancion.name}} {{cancion.duration_ms | date: 'mm:ss'}}
+
+							div(id="example-popover-2-content" class="hidden")
+								ul
+									li 
+										strong Artista: 
+										span{{artista_name}}
+									li 
+										strong Canción: 
+										span{{cancion.name}}
+									li 
+										strong Álbum: 
+										span Grandes Éxitos						
+									li 
+										strong Track: 
+										span{{cancion.track_number}}
+									li 
+										strong Duración: 
+										span{{cancion.duration_ms | date: 'mm:ss'}}
+
+				.col-xs-4
+					form						
+						h4
+							span(class="fa fa-search" aria-hidden="true")
+							| {{ (canciones | filter: buscador).length  }} de {{canciones.length}} canciones 
+						input(type="text" class="form-control" ng-model="buscador"  placeholder="Buscar Canción")
+
+					figure
+						img(src="./public/img/cover.jpg" alt="{{artista_name}}")
+						figcaption {{artista_name}}
+
+
+
+		script(src="https://code.jquery.com/jquery-2.2.4.min.js")
+		script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js")
+		script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js")
+		script(src="./public/js/app.js")
+		script(src="./public/js/controllers.js")
+		//- script(src="./public/js/directives.js")
