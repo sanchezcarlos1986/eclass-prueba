@@ -32,10 +32,16 @@
 
 			validar();
 
-			$('#buscador_spotify').keyup(function(){
-				validar();
-			});
-
+			$('#buscador_spotify')
+				.keyup(function(){
+					validar();
+				})
+				.on('keydown', function(event) {
+				   var x = event.which;
+				   if (x === 13) {
+				       event.preventDefault();
+				   }
+				});
 		});
 	}])
 
