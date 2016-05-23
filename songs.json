@@ -1,0 +1,36 @@
+{
+  "items":[
+    {
+      "artists": [
+        {
+          "name": "Olakease"
+        }
+      ]
+    },
+    {
+      "name": "Manso Hit",
+      "track_number": "01",
+      "duration_ms": "61523"
+    },
+    {
+      "name": "Temazo",
+      "track_number": "02",
+      "duration_ms": "54332"
+    },
+    {
+      "name": "Temón",
+      "track_number": "03",
+      "duration_ms": "346535"
+    },
+    {
+      "name": "Hitazo",
+      "track_number": "04",
+      "duration_ms": "65436"
+    },
+    {
+      "name": "Chica Vacilona",
+      "track_number": "05",
+      "duration_ms": "76768768"
+    }
+  ]
+}

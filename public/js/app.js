@@ -1,19 +1,21 @@
 // Angular
 (function(){
-	var app = angular.module('eclass', ['eclass.controllers']);
+	var app = angular.module('eclass', [
+		'ngRoute',
+		'eclass.controllers',
+		'eclass.directives'
+	]);
+
+	app.config(['$routeProvider', function($routeProvider){
+		$routeProvider
+			.when('/', {
+				templateUrl: './public/views/home.html'
+				// controller: 'PokedexController'
+			})
+			
+			.otherwise({
+				redirectTo: '/'
+			});
+	}]);
+
 })();
-
-// jQuery
-$(function(){
-	setTimeout(function(){	
-
-		$('[rel="popover"]').popover({
-	        html: true,
-	        content: function () {
-	            return $("#example-popover-2-content").html();
-	        }
-		}).click(function(e) {
-	        e.preventDefault();
-	    });
-	}, 1000);
-});

@@ -1,0 +1,22 @@
+form
+	h4
+		span(class="fa fa-search" aria-hidden="true") Buscador de canciones
+	.buscar
+		button(ng-click="buscarEnSpotify()" id="buscar_btn" class="btn btn-primary") Buscar
+		span(ng-if="text.length < 3") Ingrese un mínimo de 3 caracteres
+	input(type="text" class="form-control" ng-model="text" id="buscador_spotify"  placeholder="Buscar en Spotify")
+	input(type="text" class="form-control" ng-model="buscador"  placeholder="Filtrar Canciones del Listado")
+
+//- Resultados
+#resultados
+	ul
+		article(ng-repeat="item in resultados | filter: buscador | limitTo: 10")
+			.col-xs-3
+				img(ng-src="{{ item.album.images[0].url }}" alt="{{ item.album.name }}")
+			.col-xs-9
+					a(title="Descripción:" custom-popover popover-html="Artista: {{item.artists[0].name}} <br /> Título: {{item.name}} <br /> Álbum: {{item.album.name}} <br /> Track: {{item.track_number}} <br /> Duración: {{item.duration_ms | date: 'mm:ss'}}" popover-placement="bottom" popover-label="Label" class="fa fa-pencil") Detalles
+					br
+					a(href="{{ item.external_urls.spotify }}" target="_blank") Link Público
+					h5 {{ item.name }}
+					h6 {{ item.artists[0].name }} -
+						i {{ item.album.name }}

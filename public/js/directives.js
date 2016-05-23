@@ -1,54 +1,34 @@
 (function(){
 	angular.module('eclass.directives', [])
 
-	.directive('pokemonData', function(){
+	.directive('searchView', function(){
 		return {
 			restrict: 'E',
-			templateUrl: '/partials/pokemon-data.html'
+			templateUrl: './public/partials/search.html'
 		}
 	})
 
-	.directive('pokemonStats', function(){
+	.directive('albumView', function(){
 		return {
 			restrict: 'E',
-			templateUrl: '/partials/pokemon-stats.html'
+			templateUrl: './public/partials/album.html'
 		}
 	})
-
-	.directive('pokemonEvolutions', function(){
-		return {
-			restrict: 'E',
-			templateUrl: '/partials/pokemon-evolutions.html'
-		}
-	})
-
-	.directive('pokemonComments', function(){
-		return {
-			restrict: 'E',
-			templateUrl: '/partials/comments.html',
-			controller: function($scope){
-				this.comments = [];
-				this.comment = {};
-				this.show = false;
-
-				this.toggle = function(){
-					this.show = !this.show;
-				};
-
-				this.anonymousChanged = function(){
-					if(this.comment.anonymous) {
-						this.comment.email = '';
-					}
-				};
-
-				this.addComment = function(){
-					this.comment.date = Date.now();
-					this.comments.push(this.comment);
-					this.comment = {};
-				};
-			},			
-			controllerAs: 'cmtsCtrl'
-		}
+	
+	.directive('customPopover', function () {
+	    return {
+	        restrict: 'A',
+	        // template: '<a>{{label}}</a>',
+	        link: function (scope, el, attrs) {
+	            scope.label = attrs.popoverLabel;
+	            $(el).popover({
+	                trigger: 'click',
+	                html: true,
+	                content: attrs.popoverHtml,
+	                placement: attrs.popoverPlacement
+	            });
+	        }
+	    };
 	});
 
 })();

@@ -1,0 +1,26 @@
+form
+	h4
+		span(class="fa fa-search" aria-hidden="true")
+		| {{ (canciones | filter: buscador).length  }} / {{canciones.length}} canciones de {{artista_name}}
+	input(type="text" class="form-control" ng-model="buscador"  placeholder="Filtrar Canciones del Álbum")
+
+figure
+	//- img(src="./public/img/cover.jpg" alt="{{artista_name}}")
+
+div#spotify
+	song-item
+
+//- tabla de canciones del album
+table
+	tr 
+		td Track
+		td Song
+		td Duration
+
+	tr(ng-repeat="cancion in canciones | filter: buscador")
+		td {{cancion.track_number}}	
+		td 
+			a(title="Descripción:" custom-popover popover-html="Artista: {{artista_name}} <br /> Título: {{cancion.name}} <br /> Track: {{cancion.track_number}} <br /> Duración: {{cancion.duration_ms | date: 'mm:ss'}}" popover-placement="bottom" popover-label="Label")
+				| {{cancion.name}}
+
+		td {{cancion.duration_ms | date: 'mm:ss'}}
