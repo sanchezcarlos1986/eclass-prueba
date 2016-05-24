@@ -16,14 +16,23 @@
 			.success(function(resultado){
 				$scope.resultados = resultado.tracks.items;
 				$scope.text = '';
-				console.log(resultado.tracks.items[0]);
+				$('#buscar_btn').attr("disabled","disabled");
+				// console.log(resultado.tracks.items[0]);
 			});
+
+			// prevent default para links de redes sociales
+			setTimeout(function(){
+				$('.acciones a').click(function(e){
+					e.preventDefault();
+				});
+			}, 1000);
 		}
 
-		// validar longitud de input
 		$(function(){
+
+			// validar longitud de input
 			function validar() {
-				if( $('#buscador_spotify').val().length <= 3 ){
+				if( $('#buscador_spotify').val().length < 3 ){
 					$('#buscar_btn').attr("disabled","disabled");
 				} else {
 					$('#buscar_btn').attr("disabled", false);
@@ -33,7 +42,7 @@
 			validar();
 
 			$('#buscador_spotify')
-				.blur(function(){
+				.keyup(function(){
 					validar();
 				})
 				.on('keydown', function(event) {

@@ -1,9 +1,11 @@
 #search 
 	article
+		animation myMove 5s infinite
 		border-bottom 1px solid #2e2f33
 		clear both
-		overflow hidden
 		margin-bottom 5px
+		position relative
+		opacity 0		
 		
 	.col-xs-3
 		padding-left 0
@@ -11,6 +13,22 @@
 	.artista
 		color rgba(white, 0.3)
 	
-	img 
-		height auto
-		width 100%
+	figure
+		border-radius 100%
+		overflow hidden
+		img 
+			height auto
+			width 100%
+		
+	.acciones
+		border-top 1px solid rgba(white,0.12)
+		margin-top 5px
+		padding-top 5px
+		
+@keyframes myMove
+	0% 
+		opacity 1
+	50%
+		opacity 1
+	100% 
+		opacity 1
