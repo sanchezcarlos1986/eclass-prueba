@@ -1,4 +1,5 @@
 
+<h2>Buscador de canciones</h2>
 <form>
   <div class="buscar">
     <button ng-click="buscarEnSpotify()" id="buscar_btn" class="btn-buscar iblock">Buscar</button>
@@ -9,18 +10,17 @@
 <div id="search">
   <ul>
     <article ng-repeat="item in resultados | filter: buscador | limitTo: 2" ng-model="cancion">
-      <div class="col-xs-3">
+      <div class="col-sm-3">
         <figure><img ng-src="{{ item.album.images[0].url }}" alt="{{ item.album.name }}"/></figure>
       </div>
-      <div class="col-xs-9">
+      <div class="col-sm-9">
         <div class="cancion">{{ item.name }}</div>
         <div class="artista">{{ item.artists[0].name }}</div>
         <audio controls="controls">
-          <source ng-src="{{item.preview_url | trusted}}" src="{{item.preview_url | trusted}}" type="audio/ogg"/>
-          <source ng-src="{{item.preview_url | trusted}}" src="{{item.preview_url | trusted}}" type="audio/mpeg"/>
+          <source ng-src="{{item.preview_url | trusted}}" type="audio/ogg"/>
+          <source ng-src="{{item.preview_url | trusted}}" type="audio/mpeg"/>
         </audio>
-        <div class="acciones"><span title="Descripción:" custom-popover="custom-popover" popover-html="Artista: {{item.artists[0].name}} &lt;br /&gt; Título: {{item.name}} &lt;br /&gt; Álbum: {{item.album.name}} &lt;br /&gt; Track: {{item.track_number}} &lt;br /&gt; Duración: {{item.duration_ms | date: 'mm:ss'}}" popover-placement="bottom" popover-label="Label" class="fa fa-info-circle"></span><a href="#" socialshare="socialshare" socialshare-provider="facebook" socialshare-text="{{item.artists[0].name}} - {{item.name}}" socialshare-url="{{item.external_urls.spotify}}"><span class="fa fa-facebook-square"></span></a><a href="#" socialshare="socialshare" socialshare-provider="twitter" socialshare-text="{{item.artists[0].name}} - {{item.name}}" socialshare-hashtags="{{item.name}}, {{item.artists[0].name}}" socialshare-url="{{item.external_urls.spotify}}"><span class="fa fa-twitter-square"></span></a><a href="#" socialshare="socialshare" socialshare-provider="google" socialshare-url="{{item.external_urls.spotify}}"><span class="fa fa-google-plus-square"></span></a>
-        </div>
+        <acciones-item></acciones-item>
       </div>
     </article>
   </ul>

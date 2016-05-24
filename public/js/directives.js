@@ -14,6 +14,13 @@
 			templateUrl: './public/partials/album.html'
 		}
 	})
+
+	.directive('accionesItem', function(){
+		return {
+			restrict: 'E',
+			templateUrl: './public/partials/acciones.html'
+		}
+	})
 	
 	.directive('customPopover', function () {
 	    return {

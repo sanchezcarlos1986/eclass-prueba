@@ -1,12 +1,12 @@
-header
-		//- h1 
-		//- 	span(class="fa fa-spotify" aria-hidden="true")
-		//- 	| SpotEclass
+//-header
+		h1 
+			span(class="fa fa-spotify" aria-hidden="true")
+			| SpotEclass
 
-	.container
-		.row
-			.col-xs-7
-				search-view(ng-controller="searchController")
+.container
+	.row
+		.col-xs-8
+			//- search-view(ng-controller="searchController")
 
-			.col-xs-5
-				//- album-view(ng-controller="albumController")
+		.col-xs-4
+			album-view(ng-controller="albumController")
