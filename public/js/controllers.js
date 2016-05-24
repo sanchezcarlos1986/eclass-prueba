@@ -16,7 +16,7 @@
 			.success(function(resultado){
 				$scope.resultados = resultado.tracks.items;
 				$scope.text = '';
-				// console.log(resultado.tracks.items[0]);
+				console.log(resultado.tracks.items[0]);
 			});
 		}
 
@@ -33,7 +33,7 @@
 			validar();
 
 			$('#buscador_spotify')
-				.keyup(function(){
+				.blur(function(){
 					validar();
 				})
 				.on('keydown', function(event) {

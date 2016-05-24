@@ -1,13 +1,16 @@
-form
-	h4
-		span(class="fa fa-search" aria-hidden="true")
-		| {{ (canciones | filter: buscador).length  }} / {{canciones.length}} canciones de {{artista_name}}
-	input(type="text" class="form-control" ng-model="buscador"  placeholder="Filtrar Canciones del Álbum")
+h2 Álbum de la Semana
 
 figure
-	//- img(src="./public/img/cover.jpg" alt="{{artista_name}}")
+	img(src="./public/img/cover.jpg" alt="{{artista_name}}")
 
-div#spotify
+form
+	h4
+		.iblock
+			span(class="fa fa-search" aria-hidden="true")
+		.iblock
+			input(type="text" class="form-control" ng-model="buscador"  placeholder="Filtrar Canciones")
+
+div#album
 	song-item
 
 //- tabla de canciones del album

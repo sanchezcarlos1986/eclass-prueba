@@ -3,7 +3,8 @@
 	var app = angular.module('eclass', [
 		'ngRoute',
 		'eclass.controllers',
-		'eclass.directives'
+		'eclass.directives',
+		'eclass.filters'
 	]);
 
 	app.config(['$routeProvider', function($routeProvider){

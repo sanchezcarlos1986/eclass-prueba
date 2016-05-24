@@ -1,11 +1,15 @@
 
+<h2>Álbum de la Semana</h2>
+<figure><img src="./public/img/cover.jpg" alt="{{artista_name}}"/></figure>
 <form>
-  <h4><span aria-hidden="true" class="fa fa-search"></span>{{ (canciones | filter: buscador).length  }} / {{canciones.length}} canciones de {{artista_name}}</h4>
-  <input type="text" ng-model="buscador" placeholder="Filtrar Canciones del Álbum" class="form-control"/>
+  <h4>
+    <div class="iblock"><span aria-hidden="true" class="fa fa-search"></span></div>
+    <div class="iblock">
+      <input type="text" ng-model="buscador" placeholder="Filtrar Canciones" class="form-control"/>
+    </div>
+  </h4>
 </form>
-<figure>
-</figure>
-<div id="spotify">
+<div id="album">
   <song-item></song-item>
 </div>
 <table>

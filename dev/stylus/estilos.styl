@@ -5,45 +5,71 @@ background = #121314
 links = #88898c
 links_border = 3px solid #84bd00
 title = #ddd
-
-#resultados article
-	clear both
-	
-	img 
-		height auto
-		width 100%
+enabled = #648f00
+disabled = #88898c
 
 body 
-	background-color #ccc
+	background-color background
 	color white
 	font-family 'Lato'
 	
+
+header
+	background url('../img/header.jpg') center center / cover
+	height 200px
+	padding 2em
+	h1
+		margin-top 0
+	
 table td 
 	padding 5px
-	word-break break-word
+	
+input
+	margin-bottom 10px
+	border-radius 20px
+
+.fa 
+	margin-right .5em
+	
+.btn-buscar
+	background enabled
+	border 1px solid enabled
+	padding 5px 10px
+	border-radius 20px
+	width 100px
+	margin 10px 10px 10px 0
+	transition all .25s
+	&:disabled
+		background-color transparent
+		border 1px solid disabled
+		color disabled
+	
+.iblock
+	display inline-block
+	vertical-align sub
 	
 a 
 	color links
 	cursor pointer
 
-h1
+h1, h2
 	font-family 'Lobster'
+	color white
 	
 ul 
 	margin 0
 	padding 0
 	li
 		list-style none
-		
+
 figure
 	margin-top 1em
-	img 
-		height auto
-		width 100%
+img 
+	height auto
+	width 100%
 				
 #myPopover span 
 	font-weight normal
-
 	
 .popover-content,
 .popover-title
@@ -51,3 +77,5 @@ figure
 	
 .title 
 	color title
+	
+@import 'search'

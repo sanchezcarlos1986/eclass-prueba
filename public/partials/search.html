@@ -1,19 +1,23 @@
 
+<h2>Buscador de canciones</h2>
 <form>
-  <h4><span aria-hidden="true" class="fa fa-search">Buscador de canciones</span></h4>
   <div class="buscar">
-    <button ng-click="buscarEnSpotify()" id="buscar_btn" class="btn btn-primary">Buscar</button><span ng-if="text.length &lt; 3">Ingrese un mínimo de 3 caracteres</span>
+    <button ng-click="buscarEnSpotify()" id="buscar_btn" class="btn-buscar iblock">Buscar</button>
+    <input type="text" ng-model="text" id="buscador_spotify" placeholder="Buscar en Spotify" class="form-control iblock"/>
   </div>
-  <input type="text" ng-model="text" id="buscador_spotify" placeholder="Buscar en Spotify" class="form-control"/>
   <input type="text" ng-model="buscador" placeholder="Filtrar Canciones del Listado" class="form-control"/>
 </form>
-<div id="resultados">
+<div id="search">
   <ul>
-    <article ng-repeat="item in resultados | filter: buscador | limitTo: 10">
+    <article ng-repeat="item in resultados | filter: buscador | limitTo: 2" ng-model="cancion">
       <div class="col-xs-3"><img ng-src="{{ item.album.images[0].url }}" alt="{{ item.album.name }}"/></div>
-      <div class="col-xs-9"><a title="Descripción:" custom-popover="custom-popover" popover-html="Artista: {{item.artists[0].name}} &lt;br /&gt; Título: {{item.name}} &lt;br /&gt; Álbum: {{item.album.name}} &lt;br /&gt; Track: {{item.track_number}} &lt;br /&gt; Duración: {{item.duration_ms | date: 'mm:ss'}}" popover-placement="bottom" popover-label="Label" class="fa fa-pencil">Detalles</a><br/><a href="{{ item.external_urls.spotify }}" target="_blank">Link Público</a>
-        <h5>{{ item.name }}</h5>
-        <h6>{{ item.artists[0].name }} -<i>{{ item.album.name }}</i></h6>
+      <div class="col-xs-9"><a title="Descripción:" custom-popover="custom-popover" popover-html="Artista: {{item.artists[0].name}} &lt;br /&gt; Título: {{item.name}} &lt;br /&gt; Álbum: {{item.album.name}} &lt;br /&gt; Track: {{item.track_number}} &lt;br /&gt; Duración: {{item.duration_ms | date: 'mm:ss'}}" popover-placement="bottom" popover-label="Label"></a>
+        <div class="cancion">{{ item.name }}</div>
+        <div class="artista">{{ item.artists[0].name }}</div>
+        <audio controls="controls">
+          <source ng-src="{{item.preview_url | trusted}}" type="audio/ogg"/>
+          <source ng-src="{{item.preview_url | trusted}}" type="audio/mpeg"/>
+        </audio>
       </div>
     </article>
   </ul>
