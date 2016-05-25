@@ -12,20 +12,30 @@ body
 	background-color background
 	color white
 	font-family 'Lato'
-	
 
 header
 	background-image: linear-gradient(
-	rgba(41,41,41, .5), 
-	rgba(41,41,41, .5)
+	rgba(41,41,41, .7), 
+	rgba(41,41,41, .7)
 	 ), url('../img/bg.jpg');
-	    background-position: center center, center -305px
+	    background-position: center center, center -350px
 	    background-size: cover, cover
 	height 220px
 	padding 2em
 	h1
 		margin-top 0
+
+footer 
+	text-align center
+	color rgba(white, .2)
+	border-bottom 1px solid rgba(white, .2)
+	border-top 1px solid rgba(white, .2)
+	padding 1em
+	margin-top 1em
 	
+	a:hover 
+		color white
+
 table td 
 	padding 5px
 	
@@ -53,6 +63,16 @@ input
 	display inline-block
 	vertical-align sub
 	
+.acciones
+	// border-top 1px solid rgba(white,0.12)
+	margin-top 5px
+	padding-top 5px
+	a 
+		color white
+		font-size 20px
+		&:hover 
+			text-decoration none
+	
 a 
 	color links
 	cursor pointer
@@ -66,12 +86,6 @@ ul
 	padding 0
 	li
 		list-style none
-
-figure
-	margin-top 1em
-img 
-	height auto
-	width 100%
 				
 #myPopover span 
 	font-weight normal
@@ -83,5 +97,6 @@ img
 .title 
 	color title
 	
-@import 'search'
+@import 'searchView'
+@import 'albumView'
 @import 'mediaqueries'

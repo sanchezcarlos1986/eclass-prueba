@@ -1,0 +1,23 @@
+h2 Buscador de canciones
+
+form
+	.buscar
+		input(type="text" class="form-control iblock" ng-model="text" id="buscador_spotify"  placeholder="Buscar en Spotify")
+		button(ng-click="buscarEnSpotify()" id="buscar_btn" class="btn-buscar iblock") Buscar
+		//- input(type="text" class="form-control" ng-model="buscador"  placeholder="Filtrar Canciones del Listado")
+
+
+article(ng-repeat="item in resultados | filter: buscador" ng-model="cancion" class="col-sm-3")
+
+	figure
+		img(ng-src="{{ item.album.images[0].url }}" alt="{{ item.album.name }}")
+		span(class="fa fa-spotify" aria-hidden="true")
+		audio(controls)
+			source(ng-src="{{item.preview_url | trusted}}" type="audio/ogg")
+			source(ng-src="{{item.preview_url | trusted}}" type="audio/mpeg")
+
+	.detalles
+		.cancion {{ item.name }}
+		.artista {{ item.artists[0].name }}
+
+		acciones-item

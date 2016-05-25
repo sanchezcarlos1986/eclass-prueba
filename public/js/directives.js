@@ -4,14 +4,14 @@
 	.directive('searchView', function(){
 		return {
 			restrict: 'E',
-			templateUrl: './public/partials/search.html'
+			templateUrl: './public/partials/searchView.html'
 		}
 	})
 
 	.directive('albumView', function(){
 		return {
 			restrict: 'E',
-			templateUrl: './public/partials/album.html'
+			templateUrl: './public/partials/albumView.html'
 		}
 	})
 

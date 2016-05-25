@@ -1,10 +1,17 @@
 
-<div class="container">
-  <div class="row">
-    <div class="col-xs-8">
-    </div>
-    <div class="col-xs-4">
-      <album-view ng-controller="albumController"></album-view>
+<header>
+  <h1> <span aria-hidden="true" class="fa fa-spotify"></span>SpotEclass</h1>
+</header>
+<section id="contenido_principal">
+  <div class="container">
+    <div class="row">
+      <div id="searchView" class="col-sm-8">
+        <search-view ng-controller="searchController"></search-view>
+      </div>
+      <aside id="albumView" class="col-sm-4">
+        <album-view ng-controller="albumController"></album-view>
+      </aside>
     </div>
   </div>
-</div>
+</section>
+<footer>Realizado por <a href="mailto:sanchez.carlos.1986@gmail.com">Carlos Sánchez</a></footer>

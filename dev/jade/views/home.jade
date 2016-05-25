@@ -1,12 +1,16 @@
-//-header
-		h1 
-			span(class="fa fa-spotify" aria-hidden="true")
-			| SpotEclass
+header
+	h1 
+		span(class="fa fa-spotify" aria-hidden="true")
+		| SpotEclass
 
-.container
-	.row
-		.col-xs-8
-			//- search-view(ng-controller="searchController")
+section#contenido_principal
+	.container
+		.row
+			div(id="searchView" class="col-sm-8")
+				search-view(ng-controller="searchController")
 
-		.col-xs-4
-			album-view(ng-controller="albumController")
+			aside(id="albumView" class="col-sm-4")
+				album-view(ng-controller="albumController")
+
+footer Realizado por 
+	a(href="mailto:sanchez.carlos.1986@gmail.com") Carlos Sánchez

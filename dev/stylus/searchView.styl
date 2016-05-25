@@ -1,0 +1,42 @@
+article_bg 	= #222326
+cancion 	= rgba(white, .7)
+artista 	= rgba(white, .4)
+
+#searchView
+	input
+		border-radius 20px
+		margin-right .5em
+		width 70%
+
+	article
+		background-color article_bg
+		border 8px solid background
+		padding 0
+		// margin-bottom 3em
+		figure
+			position relative
+			img 
+				height auto
+				width 100%
+			span 
+				position absolute
+				left 1em
+				top 1em
+			audio
+				width 100%
+				bottom 0
+				position absolute
+		.detalles
+			padding 1em
+			min-height 130px
+			position relative
+						
+			.cancion
+				color cancion
+			.artista
+				color artista
+		
+			acciones-item
+				position absolute
+				width 85%
+				bottom 10px
