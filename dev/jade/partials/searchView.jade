@@ -2,9 +2,9 @@ h2 Buscador de canciones
 
 form
 	.buscar
-		input(type="text" class="form-control iblock" ng-model="text" id="buscador_spotify"  placeholder="Buscar en Spotify")
+		input(type="text" class="form-control iblock" ng-model="text" id="buscador_spotify"  placeholder="Ingrese al menos 3 caracteres")
 		button(ng-click="buscarEnSpotify()" id="buscar_btn" class="btn-buscar iblock") Buscar
-		//- input(type="text" class="form-control" ng-model="buscador"  placeholder="Filtrar Canciones del Listado")
+		input(type="text" class="form-control" ng-model="buscador"  placeholder="Filtrar Canciones del Listado")
 
 
 article(ng-repeat="item in resultados | filter: buscador" ng-model="cancion" class="col-sm-3")

@@ -47,17 +47,28 @@ input
 	margin-right .5em
 	
 .btn-buscar
+	animation myMove 1s infinite
 	background enabled
 	border 1px solid enabled
 	padding 5px 10px
 	border-radius 20px
-	width 100px
+	width 120px
 	margin 10px 10px 10px 0
 	transition all .25s
 	&:disabled
+		animation none
 		background-color transparent
 		border 1px solid disabled
 		color disabled
+		width 100px
+		
+@keyframes myMove
+	0% 
+		opacity 1
+	50%
+		opacity .7
+	100% 
+		opacity 1
 	
 .iblock
 	display inline-block
