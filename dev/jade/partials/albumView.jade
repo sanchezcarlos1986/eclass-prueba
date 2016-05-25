@@ -13,8 +13,7 @@ article
 .col-sm-12
 	table
 
-		tr(ng-repeat="cancion in canciones | filter: buscador")
-			td {{cancion.track_number}}	
+		tr(ng-repeat="item in canciones | filter: buscador")
+			td {{item.track_number}}	
 			td 
-				a(title="Descripción:" custom-popover popover-html="Artista: {{artista_name}} <br /> Título: {{cancion.name}} <br /> Track: {{cancion.track_number}} <br /> Duración: {{cancion.duration_ms | date: 'mm:ss'}}" popover-placement="bottom" popover-label="Label")
-					| {{cancion.name}}
+				p {{item.name}}

@@ -17,7 +17,6 @@
 				$scope.resultados = resultado.tracks.items;
 		$scope.text = '';
 				$('#buscar_btn').attr("disabled","disabled");
-				// console.log(resultado.tracks.it		ems[0]);
 			});
 
 			// prevent default para links de redes sociales
@@ -61,6 +60,7 @@
 			.success(function(artista){
 				$scope.artista_name = artista.items[0].artists[0].name;
 				$scope.canciones = artista.items;
+				console.log(artista.items[0]);
 		});
 	}])
 })();

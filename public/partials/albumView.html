@@ -12,9 +12,11 @@
 </article>
 <div class="col-sm-12">
   <table>
-    <tr ng-repeat="cancion in canciones | filter: buscador">
-      <td>{{cancion.track_number}}	</td>
-      <td> <a title="Descripción:" custom-popover="custom-popover" popover-html="Artista: {{artista_name}} &lt;br /&gt; Título: {{cancion.name}} &lt;br /&gt; Track: {{cancion.track_number}} &lt;br /&gt; Duración: {{cancion.duration_ms | date: 'mm:ss'}}" popover-placement="bottom" popover-label="Label">{{cancion.name}}</a></td>
+    <tr ng-repeat="item in canciones | filter: buscador">
+      <td>{{item.track_number}}	</td>
+      <td> 
+        <p>{{item.name}}</p>
+      </td>
     </tr>
   </table>
 </div>
