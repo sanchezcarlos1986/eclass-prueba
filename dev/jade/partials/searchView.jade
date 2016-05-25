@@ -2,9 +2,13 @@ h2(class="wow fadeInDown") Buscador de canciones
 
 form
 	.buscar
-		input(type="text" class="form-control iblock wow bounceIn" ng-model="text" id="buscador_spotify"  placeholder="Ingrese al menos 3 caracteres")
-		button(ng-click="buscarEnSpotify()" id="buscar_btn" class="btn-buscar iblock") Buscar
-		input(type="text" class="form-control" ng-model="buscador"  placeholder="Filtrar Canciones del Listado" id="filtrador")
+		label
+			span(class="fa fa-filter")
+			input(type="text" class="form-control iblock wow bounceIn" ng-model="text" id="buscador_spotify"  placeholder="Ingrese al menos 3 caracteres")
+			button(ng-click="buscarEnSpotify()" id="buscar_btn" class="btn-buscar iblock") Buscar
+		label
+			span(class="fa fa-search")
+			input(type="text" class="form-control" ng-model="buscador"  placeholder="Filtrar Canciones del Listado" id="filtrador")
 
 
 article(ng-repeat="item in resultados | filter: buscador" ng-model="cancion" class="col-sm-3 wow bounceIn")
