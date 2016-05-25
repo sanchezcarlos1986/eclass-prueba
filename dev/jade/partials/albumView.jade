@@ -1,6 +1,6 @@
-h2 Álbum de la Semana
+h2(class="wow fadeInDown") Álbum de la Semana
 
-article
+article(class="wow tada" data-wow-duration="1s" data-wow-delay="1s")
 	.col-sm-4
 		figure
 			img(src="./public/img/cover.jpg" alt="{{artista_name}}")
@@ -13,7 +13,7 @@ article
 .col-sm-12
 	table
 
-		tr(ng-repeat="item in canciones | filter: buscador")
+		tr(ng-repeat="item in canciones | filter: buscador" class="wow fadeInRight" data-wow-duration="1s" data-wow-delay="1s")
 			td {{item.track_number}}	
 			td 
 				p {{item.name}}

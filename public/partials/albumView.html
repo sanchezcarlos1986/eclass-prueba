@@ -1,6 +1,6 @@
 
-<h2>Álbum de la Semana</h2>
-<article>
+<h2 class="wow fadeInDown">Álbum de la Semana</h2>
+<article data-wow-duration="1s" data-wow-delay="1s" class="wow tada">
   <div class="col-sm-4">
     <figure><img src="./public/img/cover.jpg" alt="{{artista_name}}"/>
     </figure>
@@ -12,7 +12,7 @@
 </article>
 <div class="col-sm-12">
   <table>
-    <tr ng-repeat="item in canciones | filter: buscador">
+    <tr ng-repeat="item in canciones | filter: buscador" data-wow-duration="1s" data-wow-delay="1s" class="wow fadeInRight">
       <td>{{item.track_number}}	</td>
       <td> 
         <p>{{item.name}}</p>

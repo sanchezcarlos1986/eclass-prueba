@@ -15,7 +15,7 @@
 			$http.get('https://api.spotify.com/v1/search?type=track&q='+cancion_buscada)
 			.success(function(resultado){
 				$scope.resultados = resultado.tracks.items;
-		$scope.text = '';
+				$scope.text = '';
 				$('#buscar_btn').attr("disabled","disabled");
 			});
 
