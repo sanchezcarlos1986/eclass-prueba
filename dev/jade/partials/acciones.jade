@@ -2,13 +2,10 @@
 	a(class="fa fa-info-circle" title="Descripción:" custom-popover popover-html="Artista: {{item.artists[0].name}} <br /> Título: {{item.name}} <br /> Álbum: {{item.album.name}} <br /> Track: {{item.track_number}} <br /> Duración: {{item.duration_ms | date: 'mm:ss'}}" popover-placement="bottom" popover-label="Label" data-container="body")
 	
 	//- facebook
-	a(href="#" socialshare socialshare-provider="facebook" socialshare-text="{{item.artists[0].name}} - {{item.name}}" socialshare-url="{{item.external_urls.spotify}}")
-		span(class="fa fa-facebook-square")
+	a(href="#" socialshare socialshare-provider="facebook" socialshare-text="{{item.artists[0].name}} - {{item.name}}" socialshare-url="{{item.external_urls.spotify}}" class="fa fa-facebook-square")
 
 	//- twitter
-	a(href="#" socialshare socialshare-provider="twitter" socialshare-text="{{item.artists[0].name}} - {{item.name}}" socialshare-hashtags="{{item.name}}, {{item.artists[0].name}}" socialshare-url="{{item.external_urls.spotify}}")
-		span(class="fa fa-twitter-square")
+	a(href="#" socialshare socialshare-provider="twitter" socialshare-text="{{item.artists[0].name}} - {{item.name}}" socialshare-hashtags="{{item.name}}, {{item.artists[0].name}}" socialshare-url="{{item.external_urls.spotify}}" class="fa fa-twitter-square")
 	
 	//- google plus
-	a(href="#" socialshare socialshare-provider="google" socialshare-url="{{item.external_urls.spotify}}")
-		span(class="fa fa-google-plus-square")
+	a(href="#" socialshare socialshare-provider="google" socialshare-url="{{item.external_urls.spotify}}" class="fa fa-google-plus-square")
