@@ -9,4 +9,4 @@
 - Font Awesome para set de font-icons.
 - Google Fonts para personalizar tipografías.
 - jQuery para validaciones y como dependencia de Bootstrap.
-- WOW.js y Animate.css para animaciones de elementos. 
+- WOW.js y Animate.css para animaciones de elementos.
