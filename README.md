@@ -1,5 +1,5 @@
-# eclass-prueba
-###### Prueba Front End para Eclass
+# eclass-prueba 
+###### Prueba Front End para Eclass  
 
 - Jade para compilar HTML.
 - Stylus para compilar CSS.
@@ -9,4 +9,6 @@
 - Font Awesome para set de font-icons.
 - Google Fonts para personalizar tipografías.
 - jQuery para validaciones y como dependencia de Bootstrap.
-- WOW.js y Animate.css para animaciones de elementos. 
+- WOW.js y Animate.css para animaciones de elementos.
+
+## Revisar en http://sanchezcarlos1986.github.io/eclass-prueba
