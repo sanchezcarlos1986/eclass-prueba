@@ -54,8 +54,7 @@
 	}])
 
 	.controller('albumController', ['$scope','$http', function($scope, $http){	
-		
-		$http.get('https://api.spotify.com/v1/albums/6Nvv5Jrk3cg5BdplDxEsHq/tracks')
+		$http.get('https://api.spotify.com/v1/albums/2J1e7x33Aejx7KFmVbgoGW/tracks')
 		// $http.get('./songs.json')
 			.success(function(artista){
 				$scope.artista_name = artista.items[0].artists[0].name;
