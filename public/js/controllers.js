@@ -10,9 +10,13 @@
 	          var cancion_buscada = this.text;
 	        }
 
-	        // console.log($scope.text);
-
-			$http.get('https://api.spotify.com/v1/search?type=track&q='+cancion_buscada)
+	        $http({
+				method: 'GET',
+				url: 'https://api.spotify.com/v1/search?type=track&q='+cancion_buscada,
+				headers: {
+					'Authorization': 'Bearer BQAuv0vstEXmpC38MgDslP9NWYZ522b4dXwJTCnPMxSrioKUyAk3bugEgkbEKIuIhx1i4pyORf0JY7BGN1tpiQWgG3OeAVYRkKStWXhVTR0Tyo-6Oh2UyE2DzbVhG5dimtVfcUWv-kAHLYSgDLn9xz12OTCueOeHxlPqSy2G'
+				}
+			})
 			.success(function(resultado){
 				$scope.resultados = resultado.tracks.items;
 				$scope.text = '';
@@ -27,39 +31,33 @@
 			}, 1000);
 		}
 
-		$(function(){
-
-			// validar longitud de input
-			function validar() {
-				if( $('#buscador_spotify').val().length < 3 ){
-					$('#buscar_btn').attr("disabled","disabled");
-				} else {
-					$('#buscar_btn').attr("disabled", false);
-				}
-			}
-
-			validar();
-
-			$('#buscador_spotify')
-				.keyup(function(){
-					validar();
-				})
-				.on('keydown', function(event) {
-				   var x = event.which;
-				   if (x === 13) {
-				       event.preventDefault();
-				   }
-				});
-		});
 	}])
 
 	.controller('albumController', ['$scope','$http', function($scope, $http){	
-		$http.get('https://api.spotify.com/v1/albums/2J1e7x33Aejx7KFmVbgoGW/tracks')
-		// $http.get('./songs.json')
+		$http({
+			method: 'GET',
+			url: 'https://api.spotify.com/v1/albums/2J1e7x33Aejx7KFmVbgoGW',
+			headers: {
+				'Authorization': 'Bearer BQAuv0vstEXmpC38MgDslP9NWYZ522b4dXwJTCnPMxSrioKUyAk3bugEgkbEKIuIhx1i4pyORf0JY7BGN1tpiQWgG3OeAVYRkKStWXhVTR0Tyo-6Oh2UyE2DzbVhG5dimtVfcUWv-kAHLYSgDLn9xz12OTCueOeHxlPqSy2G'
+			}
+		})
+			.success(function(album){
+				$scope.albumName = album.name;
+				$scope.albumCover = album.images[0].url;
+		});
+	}])
+
+	.controller('albumControllerTracks', ['$scope','$http', function($scope, $http){	
+		$http({
+			method: 'GET',
+			url: 'https://api.spotify.com/v1/albums/2J1e7x33Aejx7KFmVbgoGW/tracks',
+			headers: {
+				'Authorization': 'Bearer BQAuv0vstEXmpC38MgDslP9NWYZ522b4dXwJTCnPMxSrioKUyAk3bugEgkbEKIuIhx1i4pyORf0JY7BGN1tpiQWgG3OeAVYRkKStWXhVTR0Tyo-6Oh2UyE2DzbVhG5dimtVfcUWv-kAHLYSgDLn9xz12OTCueOeHxlPqSy2G'
+			}
+		})
 			.success(function(artista){
 				$scope.artista_name = artista.items[0].artists[0].name;
 				$scope.canciones = artista.items;
-				console.log(artista.items[0]);
 		});
 	}])
 })();
