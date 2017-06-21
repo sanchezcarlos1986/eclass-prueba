@@ -47,6 +47,7 @@
 		});
 	}])
 
+
 	.controller('albumControllerTracks', ['$scope','$http', function($scope, $http){	
 		$http({
 			method: 'GET',
