@@ -3,6 +3,8 @@
 
 	.controller('searchController', ['$scope','$http', function($scope, $http){	
 		
+		var token = 'BQDCNmsCzw75VINwl_IFipOtf0atEPQuUZFwH-zsVkpdoT5MMhR7zhN3v7BamFOXVHntl3A790AQdcUpk60EnwBhJ583FmOgMO1avA18pRHPliAcE_F7eXwO5vw42B5L10mO6dDZto0XiY5uazb_WPYYitkNHidps_CDi991W_l48fZd5M4sGN02';
+		
 		// obtención del json de listados de spotify
 		$scope.buscarEnSpotify = function(){
 
@@ -14,7 +16,7 @@
 				method: 'GET',
 				url: 'https://api.spotify.com/v1/search?type=track&q='+cancion_buscada,
 				headers: {
-					'Authorization': 'Bearer BQAuv0vstEXmpC38MgDslP9NWYZ522b4dXwJTCnPMxSrioKUyAk3bugEgkbEKIuIhx1i4pyORf0JY7BGN1tpiQWgG3OeAVYRkKStWXhVTR0Tyo-6Oh2UyE2DzbVhG5dimtVfcUWv-kAHLYSgDLn9xz12OTCueOeHxlPqSy2G'
+					'Authorization': 'Bearer ' + token;
 				}
 			})
 			.success(function(resultado){
@@ -38,7 +40,7 @@
 			method: 'GET',
 			url: 'https://api.spotify.com/v1/albums/2J1e7x33Aejx7KFmVbgoGW',
 			headers: {
-				'Authorization': 'Bearer BQAuv0vstEXmpC38MgDslP9NWYZ522b4dXwJTCnPMxSrioKUyAk3bugEgkbEKIuIhx1i4pyORf0JY7BGN1tpiQWgG3OeAVYRkKStWXhVTR0Tyo-6Oh2UyE2DzbVhG5dimtVfcUWv-kAHLYSgDLn9xz12OTCueOeHxlPqSy2G'
+				'Authorization': 'Bearer ' + token;
 			}
 		})
 			.success(function(album){
