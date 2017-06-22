@@ -1,9 +1,10 @@
 (function(){
+	var token = 'BQDCNmsCzw75VINwl_IFipOtf0atEPQuUZFwH-zsVkpdoT5MMhR7zhN3v7BamFOXVHntl3A790AQdcUpk60EnwBhJ583FmOgMO1avA18pRHPliAcE_F7eXwO5vw42B5L10mO6dDZto0XiY5uazb_WPYYitkNHidps_CDi991W_l48fZd5M4sGN02';
+		
 	angular.module('eclass.controllers', [])
 
 	.controller('searchController', ['$scope','$http', function($scope, $http){	
 		
-		var token = 'BQDCNmsCzw75VINwl_IFipOtf0atEPQuUZFwH-zsVkpdoT5MMhR7zhN3v7BamFOXVHntl3A790AQdcUpk60EnwBhJ583FmOgMO1avA18pRHPliAcE_F7eXwO5vw42B5L10mO6dDZto0XiY5uazb_WPYYitkNHidps_CDi991W_l48fZd5M4sGN02';
 		
 		// obtención del json de listados de spotify
 		$scope.buscarEnSpotify = function(){
