@@ -1,5 +1,5 @@
 (function(){
-	var token = 'BQBMi7u-3TAbzdsN54Oyr0Zms_pQiCOtY3TuQLk45_ZajzQ7ZKkZE5gyTwAMntqym7OB87vBIgQgyYYlQsmlWt7n4Vd0Ct6ruJK2vQ5hq5mXvJa1E1DgJ6g0slpEFGY7PCDqkDMI_Dr-TqeimmdEMlq_Pzwza4tMG9JWKnUL-GvHgENItB7PT33g';
+	var token = 'BQAuloA9c5-jPFUyWenr_w-nVvX-hCCpOp92TlwvB7Ykmcx6S8YaYdAfHJ0rqoGMGTp7sUaZI_oPws5977ihY-Olb9xiE2p66KVX_2T5QmO4W1wBCYQs1NP51YjgsN0RVLGG1Mnd-ThkCr4IQXCgz9Y776z1drmkqYJFxkMU7KATcctCwt_c-PwF';
 		
 	angular.module('eclass.controllers', [])
 
