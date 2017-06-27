@@ -56,7 +56,7 @@
 			method: 'GET',
 			url: 'https://api.spotify.com/v1/albums/2J1e7x33Aejx7KFmVbgoGW/tracks',
 			headers: {
-				'Authorization': 'Bearer BQAuv0vstEXmpC38MgDslP9NWYZ522b4dXwJTCnPMxSrioKUyAk3bugEgkbEKIuIhx1i4pyORf0JY7BGN1tpiQWgG3OeAVYRkKStWXhVTR0Tyo-6Oh2UyE2DzbVhG5dimtVfcUWv-kAHLYSgDLn9xz12OTCueOeHxlPqSy2G'
+				'Authorization': 'Bearer ' + token
 			}
 		})
 			.success(function(artista){
